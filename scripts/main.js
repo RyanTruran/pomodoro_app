@@ -1,15 +1,5 @@
 
 var counting=0;
-var dt = new Date();
-var minutes = dt.getMinutes();
-var minutes_st ="00";
-if(minutes<10){
-  minutes_st="0"+minutes;
-}
-else{
-  minutes_st=minutes;
-}
-var time = dt.getHours() + ":" + minutes_st;
 var preset_work_time = 1500;
 var work_time = preset_work_time;
 var preset_break_time = 300;
@@ -18,18 +8,39 @@ var time_remaining = work_time;
 $(document).ready(function(){
   console.log("jquery is running");
   interval_time=setInterval(function(){
+    var dt = new Date();
+    var minutes = dt.getMinutes();
+    var minutes_st ="00";
+    if(minutes<10){
+      minutes_st="0"+minutes;
+    }
+    else{
+      minutes_st=minutes;
+    }
+    var time = dt.getHours() + ":" + minutes_st;
     $("#current_time_number").text(time);
   }, 1000);
 
-  $("#work_time_number").text(seconds_to_string(preset_work_time));
+  $("#work_time_number").text(seconds_to_string(work_time));
   $("#break_time_number").text(seconds_to_string(preset_break_time));
   $("#time_remaining p").text(seconds_to_string(time_remaining));
 
 });
-$( ".sm_display_box" ).on( "click", function() {
-  alert("You clicked on "+this.id);
-});
+$( "#work_time" ).on( "click", function() {
+    prompted_work_time=prompt("How Long would you like to work for without breaks?");
+    if(isNaN(prompted_work_time)===true){
+      prompted_work_time=25;
+    }
+    if(counting===0){
+    time_remaining = prompted_work_time*60;
+    work_time = time_remaining;
+    console.log(work_time);
+    $("#time_remaining p").text(seconds_to_string(time_remaining));
+    $("#work_time_number").text(seconds_to_string(work_time));
+    }
 
+
+});
 $( "#start_button").on( "click", function() {
   if(counting===0){
     counting=1;
