@@ -47,6 +47,7 @@ $( "#start_button").on( "click", function() {
     interval_count_down=setInterval(function(){
     time_remaining=time_remaining-1;
     $("#time_remaining p").text(seconds_to_string(time_remaining));
+    $("title").text(seconds_to_string(time_remaining)+" - "+"Pomodoro");
   }, 1000);}
 });
 
