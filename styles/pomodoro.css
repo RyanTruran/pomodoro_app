@@ -21,7 +21,6 @@ body{
   background-color: black;
   box-shadow: rgb(0, 0, 0) 10px 10px 36px 8px; background-color: rgb(186, 207, 162);
   overflow: hidden;
-  border:2px solid black;
   border-radius: 10px;
 }
 
@@ -75,4 +74,23 @@ body{
   margin:auto;
   padding: 0px;
   padding-top: 5px;
+}
+
+h3{
+  padding:auto;
+  margin:auto;
+}
+
+.sm_display_box{
+  width:70%;
+  height:20%;
+  margin:auto;
+  background-color: #36535C;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.sm_time{
+  color:white;
+  padding:10px;
+  margin:auto;
 }

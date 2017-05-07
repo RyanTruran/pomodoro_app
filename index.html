@@ -11,16 +11,19 @@
       <div id = "viewer">
         <div id="left_pane">
           <!--Current Time-->
-          <div id="current_time">
-
+          <h3>Current Time</h3>
+          <div class="sm_display_box" id="current_time">
+            <h2 class="sm_time" id="current_time_number">00:00</h2>
           </div>
           <!--Selected Pomodoro Time-->
-          <div id="work_time">
-
+          <h3>Work Time</h3>
+          <div class="sm_display_box" id="work_time">
+            <h2 class="sm_time" id="work_time_number">00:00</h2>
           </div>
           <!--Selected Break Time-->
-          <div id="break_time">
-
+          <h3>Break Time</h3>
+          <div class="sm_display_box" id="break_time">
+            <h2 class="sm_time" id="break_time_number">00:00</h2>
           </div>
         </div>
         <div id="center_pane">
@@ -37,5 +40,7 @@
         </div>
       </div>
     </div>
+    <script src="scripts/jQuery.js"></script>
+    <script src="scripts/main.js"></script>
   </body>
 </html>
